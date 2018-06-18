@@ -1,0 +1,8 @@
+copman<-read.table("ch01pr20.txt")
+colnames(copman)=c("Time","NoMac")
+results.lm=lm(Time~NoMac,copman)
+summary(results.lm)
+residuals.copman=resid(results.lm)
+sum(residuals.copman)
+plot(copman$NoMac,copman$Time)
+abline(lm(copman$Time~copman$NoMac))
